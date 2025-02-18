@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { FaBook } from 'react-icons/fa';
 import { FaGithub, FaTrophy } from 'react-icons/fa6';
 import { PiEyeglassesBold } from 'react-icons/pi';
 import styles from './Footer.module.css';
@@ -20,6 +21,13 @@ const Footer = () => {
 					rel='noreferrer noopener'
 				>
 					<FaGithub />
+				</Link>
+				<Link
+					to='https://collectionlog.net/'
+					target='_blank'
+					rel='noreferrer noopener'
+				>
+					<FaBook />
 				</Link>
 				<Link
 					to='https://secure.runescape.com/m=hiscore_oldschool/hiscorepersonal?user1=Suspext'
