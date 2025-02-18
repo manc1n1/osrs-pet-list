@@ -1,0 +1,140 @@
+.header {
+	position: sticky;
+	top: 0;
+	height: 80px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--accent-dark);
+	border-bottom: 1px solid var(--yellow-dark);
+	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+	z-index: 1000;
+	transform: translateY(0);
+	transition: all 0.3s ease-in-out;
+}
+
+.hidden {
+	transform: translateY(-98%);
+	box-shadow: none;
+}
+
+.atTop {
+	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.headerBrand a {
+	color: var(--yellow-dark);
+	text-decoration: none;
+	font-size: 2rem;
+	margin-left: 2rem;
+}
+
+.headerNav {
+	display: flex;
+	gap: 1rem;
+	margin-right: 2rem;
+	transition: 0.5s ease-in-out;
+	background-color: var(--accent-dark);
+}
+
+.headerNav a {
+	color: var(--yellow-dark);
+	font-size: 1.5rem;
+	text-decoration: none;
+}
+
+.headerToggle {
+	display: none;
+	background: none;
+	border: none;
+	color: var(--yellow-dark);
+	cursor: pointer;
+	margin-left: 1rem;
+}
+
+.headerBrand a:hover,
+.headerNav a:hover {
+	color: var(--orange-dark);
+}
+
+.headerNav a::after {
+	content: '';
+	display: block;
+	width: 0;
+	height: 1px;
+	background: var(--orange-dark);
+	transition: width 0.3s;
+}
+
+.headerNav a:hover::after {
+	width: 100%;
+}
+
+@media (prefers-color-scheme: light) {
+	.header {
+		background-color: var(--accent-light);
+		border-bottom: 1px solid var(--yellow-light);
+	}
+
+	.headerNav {
+		background-color: var(--accent-light);
+	}
+
+	.headerBrand a,
+	.headerNav a,
+	.headerToggle {
+		color: var(--yellow-light);
+	}
+
+	.headerBrand a:hover,
+	.headerNav a:hover {
+		color: var(--orange-light);
+	}
+
+	.headerNav a::after {
+		background: var(--orange-light);
+	}
+}
+
+@media (max-width: 768px) {
+	.header {
+		flex-direction: row-reverse;
+	}
+
+	.headerBrand a {
+		margin-right: 1rem;
+	}
+
+	.headerNav {
+		position: absolute;
+		top: 80px;
+		left: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		max-height: 0;
+		width: 100%;
+		overflow-x: hidden;
+		border-bottom: 1px solid var(--yellow-dark);
+	}
+
+	.headerNav a {
+		padding: 1rem 2rem;
+		box-sizing: border-box;
+	}
+
+	.headerNavOpen {
+		max-height: 100vh;
+		display: flex;
+	}
+
+	.headerToggle {
+		display: block;
+	}
+
+	@media (prefers-color-scheme: light) {
+		.headerNav {
+			border-bottom: 1px solid var(--yellow-light);
+		}
+	}
+}
