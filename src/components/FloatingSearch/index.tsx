@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import styles from './FloatingSearch.module.css';
 import useScrollDirection from '@/hooks/useScrollDirection';
@@ -8,6 +8,7 @@ const FloatingSearch = () => {
 	const [isOpen, setOpen] = useState(false);
 	const { scrollDirection, isAtTop } = useScrollDirection();
 	const { username, setUsername } = useUsername();
+	const inputRef = useRef<HTMLInputElement>(null);
 
 	const scrollClasses = `
         ${scrollDirection === 'down' && !isAtTop ? styles.hidden : ''}
@@ -23,15 +24,27 @@ const FloatingSearch = () => {
 		}
 	};
 
+	useEffect(() => {
+		if (isOpen) {
+			setTimeout(() => inputRef.current?.focus(), 50);
+		}
+	}, [isOpen]);
+
+	const handleBlur = () => {
+		setTimeout(() => setOpen(false), 500);
+	};
+
 	return (
 		<>
 			<div className={`${styles.container} ${scrollClasses}`}>
 				<input
+					ref={inputRef}
 					className={`${styles.input} ${isOpen ? styles.show : ''}`}
 					type='text'
 					placeholder='Search RSN'
 					value={username}
 					onChange={handleInputChange}
+					onBlur={handleBlur}
 					maxLength={12}
 				/>
 				<button
