@@ -1,0 +1,92 @@
+.container {
+	position: fixed;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	top: 5.75rem;
+	right: 2rem;
+	transform: translateY(0);
+	transition: all 0.6s ease-in-out;
+}
+
+.hidden {
+	transform: translateY(-400%);
+	opacity: 0;
+	pointer-events: none;
+	box-shadow: none;
+}
+
+.input {
+	font-family: runescape;
+	font-size: 16px;
+	background-color: var(--accent-dark);
+	width: 0;
+	padding: 0;
+	border: 1px solid var(--yellow-dark);
+	border-radius: 8px;
+	outline: none;
+	opacity: 0;
+	overflow: hidden;
+	transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out,
+		padding 0.3s ease-in-out;
+}
+
+.show {
+	width: 150px;
+	opacity: 1;
+	padding: 8px;
+}
+
+.button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--accent-dark);
+	color: var(--yellow-dark);
+	border: none;
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	font-size: 18px;
+	cursor: pointer;
+	transition: transform 0.2s ease-in-out;
+}
+
+.button:hover {
+	color: var(--orange-dark);
+	transform: scale(1.1);
+}
+
+.span {
+	display: flex;
+}
+
+@media (prefers-color-scheme: light) {
+	.input {
+		background-color: var(--accent-light);
+		border: 1px solid var(--yellow-light);
+	}
+
+	.button {
+		background-color: var(--accent-light);
+		color: var(--yellow-light);
+	}
+
+	.button:hover {
+		color: var(--orange-light);
+	}
+}
+
+@media (max-width: 768px) {
+	.container {
+		left: 1.25rem;
+	}
+
+	.input {
+		order: 2;
+	}
+
+	.show {
+		width: 100%;
+	}
+}

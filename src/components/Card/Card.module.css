@@ -1,0 +1,18 @@
+.card {
+	font-family: runescape-small;
+	padding: 16px;
+	margin: 10px;
+	background-color: var(--accent-dark);
+	border: 1px solid var(--yellow-dark);
+	border-radius: 8px;
+	width: 100px;
+	height: 100px;
+	overflow: hidden;
+}
+
+@media (prefers-color-scheme: light) {
+	.card {
+		background-color: var(--accent-light);
+		border: 1px solid var(--yellow-light);
+	}
+}
