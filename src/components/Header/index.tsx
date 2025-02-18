@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Squeeze as Hamburger } from 'hamburger-react';
 import styles from './Header.module.css';
 import useScrollDirection from '@/hooks/useScrollDirection';
+import petListImg from '@/assets/images/Pet_list.png';
 
 const Header = () => {
 	const [isOpen, setOpen] = useState(false);
@@ -33,7 +34,7 @@ const Header = () => {
 					onClick={scrollToTop}
 				>
 					<img
-						src='/src/assets/images/Pet_list.png'
+						src={petListImg}
 						alt=''
 						style={{ width: '25px' }}
 					/>
