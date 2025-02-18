@@ -18,7 +18,7 @@ const PetGrid = () => {
 		setLocalError(null);
 		const timer = setTimeout(() => {
 			setDebouncedUsername(username);
-		}, 500);
+		}, 1500);
 
 		if (username === '') {
 			setDebouncedUsername('');
