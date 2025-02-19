@@ -10,10 +10,9 @@ const FloatingSearch = () => {
 	const { username, setUsername } = useUsername();
 	const inputRef = useRef<HTMLInputElement>(null);
 
-	const scrollClasses = `
-        ${scrollDirection === 'down' && !isAtTop ? styles.hidden : ''}
-        ${isAtTop ? styles.atTop : ''}
-				`.trim();
+	const scrollClasses = `${
+		scrollDirection === 'down' && !isAtTop ? styles.hidden : ''
+	}`.trim();
 
 	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const regex = /^[a-zA-Z0-9 ]*$/;
