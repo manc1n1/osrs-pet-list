@@ -22,18 +22,39 @@ async function get<T>(
 	let cachedResponse = cache.get(cacheKey);
 
 	if (!cachedResponse) {
+		console.log('Cache miss: Fetching from local storage');
 		const cachedData = localStorage.getItem(cacheKey);
 		if (cachedData) {
+			console.log('Local storage hit: Attempting to cache data...');
 			cachedResponse = JSON.parse(cachedData);
 		}
 	}
 
 	if (cachedResponse && Date.now() - cachedResponse.timestamp < cacheDuration) {
 		console.log('Cache hit: Returning cached data');
+		console.log(
+			'Local storage age:',
+			`${(
+				cachedResponse && Date.now() / 60000 - cachedResponse.timestamp / 60000
+			).toFixed(2)}mins`,
+		);
+		console.log('<');
+		console.log('Cache duration age:', `${cacheDuration / 60000}mins`);
+		console.log('');
 		return cachedResponse.data as T;
+	} else {
+		console.log('Local storage data stale...');
+		console.log(
+			'Local storage age:',
+			`${(
+				cachedResponse && Date.now() / 60000 - cachedResponse.timestamp / 60000
+			)?.toFixed(2)}mins`,
+		);
+		console.log('>');
+		console.log('Cache duration age:', `${cacheDuration / 60000}mins`);
+		console.log('Local storage miss: Fetching data from API');
 	}
 
-	console.log('Cache miss: Fetching data from API');
 	const response = await fetch(url.toString());
 	if (!response.ok) {
 		throw new Error(`HTTP error! status: ${response.status}`);
@@ -47,6 +68,8 @@ async function get<T>(
 	);
 
 	console.log('Data fetched from API and cached');
+	console.log('---[END GET]---');
+	console.log('');
 	return data as T;
 }
 
