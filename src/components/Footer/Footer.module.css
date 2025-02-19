@@ -28,17 +28,19 @@
 .footerIcons {
 	display: flex;
 	font-size: 1.5rem;
-	gap: 25px;
+	gap: 20px;
 	margin-bottom: 0.5rem;
 }
 
 .footerIcons a {
 	color: var(--yellow-dark);
 	text-decoration: none;
+	transition: transform 0.2s ease-in-out;
 }
 
 .footerIcons a:hover {
 	color: var(--orange-dark);
+	transform: scale(1.1);
 }
 
 @media (prefers-color-scheme: light) {

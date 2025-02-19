@@ -1,7 +1,12 @@
 import { Link } from 'react-router-dom';
-import { FaBook } from 'react-icons/fa';
-import { FaGithub, FaTrophy } from 'react-icons/fa6';
-import { PiEyeglassesBold } from 'react-icons/pi';
+import { VscGithub } from 'react-icons/vsc';
+import { IoMdTrophy } from 'react-icons/io';
+import { RiBook2Fill } from 'react-icons/ri';
+import { FaDiscord } from 'react-icons/fa6';
+// import { PiEyeglassesBold } from 'react-icons/pi';
+import { ReactComponent as WOMLogo } from '@/assets/images/wom.svg';
+import { ReactComponent as RuneLiteLogo } from '@/assets/images/runelite.svg';
+import { ReactComponent as OSRSWikiLogo } from '@/assets/images/osrswiki.svg';
 import styles from './Footer.module.css';
 
 const Footer = () => {
@@ -20,28 +25,58 @@ const Footer = () => {
 					target='_blank'
 					rel='noreferrer noopener'
 				>
-					<FaGithub />
-				</Link>
-				<Link
-					to='https://collectionlog.net/'
-					target='_blank'
-					rel='noreferrer noopener'
-				>
-					<FaBook />
+					<VscGithub />
 				</Link>
 				<Link
 					to='https://secure.runescape.com/m=hiscore_oldschool/hiscorepersonal?user1=Suspext'
 					target='_blank'
 					rel='noreferrer noopener'
 				>
-					<FaTrophy />
+					<IoMdTrophy />
+				</Link>
+				<Link
+					to='https://collectionlog.net/'
+					target='_blank'
+					rel='noreferrer noopener'
+				>
+					<RiBook2Fill />
+				</Link>
+				<Link
+					to='https://runelite.net/'
+					target='_blank'
+					rel='noreferrer noopener'
+				>
+					<RuneLiteLogo
+						width='24px'
+						height='24px'
+					/>
+				</Link>
+				<Link
+					to='https://oldschool.runescape.wiki/'
+					target='_blank'
+					rel='noreferrer noopener'
+				>
+					<OSRSWikiLogo
+						width='24px'
+						height='24px'
+					/>
 				</Link>
 				<Link
 					to='https://wiseoldman.net/players/Suspext'
 					target='_blank'
 					rel='noreferrer noopener'
 				>
-					<PiEyeglassesBold />
+					<WOMLogo
+						width='24px'
+						height='24px'
+					/>
+				</Link>
+				<Link
+					to='https://discord.gg/geuddJ5Htf'
+					target='_blank'
+					rel='noreferrer noopener'
+				>
+					<FaDiscord />
 				</Link>
 			</div>
 		</footer>
