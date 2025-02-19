@@ -1,5 +1,4 @@
 import styles from '@/styles/Container.module.css';
-// import FloatingSearch from '../FloatingSearch';
 
 const Instructions = () => {
 	return (
