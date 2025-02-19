@@ -22,7 +22,6 @@ const Pets = () => {
 
 		if (username === '') {
 			setDebouncedUsername('');
-			setData(null);
 		}
 
 		return () => clearTimeout(timer);
@@ -37,7 +36,6 @@ const Pets = () => {
 	useEffect(() => {
 		if (error) {
 			setLocalError(error);
-			setData(null);
 		}
 	}, [error]);
 
