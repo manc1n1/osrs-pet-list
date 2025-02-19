@@ -1,11 +1,10 @@
 import styles from '@/styles/Container.module.css';
-import FloatingSearch from '../FloatingSearch';
+// import FloatingSearch from '../FloatingSearch';
 
 const Instructions = () => {
 	return (
 		<>
 			<div className={styles.container}>Please Enter your RSN</div>
-			<FloatingSearch />
 		</>
 	);
 };

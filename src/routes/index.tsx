@@ -1,7 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { UsernameProvider } from '@/contexts/usernameContext';
 import Layout from '@/pages/Layout';
 import PageNotFound from '@/pages/PageNotFound';
 import Pets from '@/pages/Pets';
+import FloatingSearch from '@/components/FloatingSearch';
 
 const AppRoutes = () => {
 	return (
@@ -13,7 +15,12 @@ const AppRoutes = () => {
 				>
 					<Route
 						index
-						element={<Pets />}
+						element={
+							<UsernameProvider>
+								<FloatingSearch />
+								<Pets />
+							</UsernameProvider>
+						}
 					/>
 					<Route
 						path='*'
