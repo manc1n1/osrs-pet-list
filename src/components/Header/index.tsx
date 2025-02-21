@@ -55,7 +55,7 @@ const Header = () => {
 					toggled={isOpen}
 					toggle={setOpen}
 					size={25}
-					label='Show menu'
+					label='Show nav'
 				/>
 			</div>
 		</header>
