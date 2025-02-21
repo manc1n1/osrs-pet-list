@@ -14,9 +14,21 @@ const Footer = () => {
 		<footer className={styles.footer}>
 			<div className={styles.footerText}>
 				<p className={styles.p}>
-					<a href='https://oldschool.runescape.com/'>Old School RuneScape</a>
+					<a
+						href='https://oldschool.runescape.com/'
+						target='_blank'
+						rel='noreferrer noopener'
+					>
+						Old School RuneScape
+					</a>
 					&nbsp;is a trademark of&nbsp;
-					<a href='https://www.jagex.com/'>Jagex Ltd.</a>
+					<a
+						href='https://www.jagex.com/'
+						target='_blank'
+						rel='noreferrer noopener'
+					>
+						Jagex Ltd.
+					</a>
 				</p>
 			</div>
 			<div className={styles.footerIcons}>
