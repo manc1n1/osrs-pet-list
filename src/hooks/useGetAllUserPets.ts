@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { apiClient } from '@/services/apiClient';
-import { PetsData } from '@/types/allpets';
+import { PetsData } from '@/types/pet';
 
 const useGetAllUserPets = (username: string, pageName: string) => {
 	const [data, setData] = useState<PetsData | null>(null);

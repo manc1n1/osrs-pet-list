@@ -1,4 +1,4 @@
-import { PetsData } from '@/types/allpets';
+import { PetsData } from '@/types/pet';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 

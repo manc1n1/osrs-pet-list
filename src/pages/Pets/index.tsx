@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import styles from './Pets.module.css';
-import { PetsData } from '@/types/allpets';
+import { PetsData } from '@/types/pet';
 import useGetAllUserPets from '@/hooks/useGetAllUserPets';
 import { useUsername } from '@/hooks/useUsername';
 import Loading from '@/components/Loading';
